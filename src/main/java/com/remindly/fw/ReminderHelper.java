@@ -16,6 +16,72 @@ public class ReminderHelper extends BaseHelper {
         type(By.id("reminder_title"), text);
     }
 
+     /* public void addAllData(String period, String month, int number, int index,
+                            String period2, String year, String timeOfDay, int xOur,
+                            int yOur, int xMin, int yMin, String repeat, String typeRep) {
+        tapOnDateField();
+
+        pause(1000);
+
+        if (!getSelectedMonth().equals(month)) {
+            for (int i = 0; i < number; i++) {
+                if (period.equals("future")) {
+                    swipe(0.7, 0.4);
+                } else if (period.equals("past")) {
+                    swipe(0.5, 0.8);
+                }
+            }
+        }
+        getSelectedMonth();
+
+        List<WebElement> days = driver.findElements(By.className("android.view.View"));
+        days.get(index).click();
+
+        tapOnYear();
+
+        pause(1000);
+
+        getSelectedYear();
+
+        if (!getSelectedYear().equals(year)) {
+            if (period2.equals("future")) {
+                swipeUntilNeededYear(year, 0.6, 0.5);
+            } else if (period2.equals("past")) {
+                swipeUntilNeededYear(year, 0.5, 0.6);
+            }
+        }
+        tap(By.id("month_text_view"));
+
+        tapOnOk();
+
+        tapOnTimeField();
+
+        pause(1000);
+
+        if (timeOfDay.equals("am")) {
+            tapWithCoordinates(279, 1321);
+        } else if (timeOfDay.equals("pm")) {
+            tapWithCoordinates(801, 1321);
+        }
+
+        tapWithCoordinates(xOur, yOur);
+        tapWithCoordinates(xMin, yMin);
+
+        tapOnOk();
+
+        tapOnRepetitionInterval();
+
+        pause(1000);
+        type(By.className("android.widget.EditText"), repeat);
+        tap(By.xpath("//*[@text='OK']"));
+
+        tapOnTypeOfRepetition();
+        tap(By.xpath("//*[@text='" + typeRep + "']"));
+
+        saveReminder();
+    }
+      */
+
     public void tapOnDateField() {
         tap(By.id("date"));
     }
@@ -69,7 +135,6 @@ public class ReminderHelper extends BaseHelper {
             swipeInElement(By.className("android.widget.ListView"), startPoint, stopPoint);
             getSelectedYear();
         }
-
     }
 
     public String getSelectedYear() {
